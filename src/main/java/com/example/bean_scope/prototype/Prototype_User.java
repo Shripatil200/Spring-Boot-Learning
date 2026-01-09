@@ -3,7 +3,10 @@ package com.example.bean_scope.prototype;
 import jakarta.annotation.PostConstruct;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
+@Service
 @Component
 @Scope(value="prototype")
 public class Prototype_User {
