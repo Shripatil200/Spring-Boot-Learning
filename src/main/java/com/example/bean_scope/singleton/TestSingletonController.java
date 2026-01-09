@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/api")
-public class TestControllerSingleton{
+public class TestSingletonController {
 
     @Autowired
     Singleton_User user;
@@ -17,13 +17,13 @@ public class TestControllerSingleton{
     @Autowired
     Singleton_Student student;
 
-    public TestControllerSingleton(){
-        System.out.println("TestControllerSingleton initialization");
+    public TestSingletonController(){
+        System.out.println("TestSingletonController initialization");
     }
 
     @PostConstruct
     public void init(){
-        System.out.println("TestControllerSingleton hashcode : "+ this.hashCode()
+        System.out.println("TestSingletonController hashcode : "+ this.hashCode()
                 + "\tSingleton_User hashcode : "+ user.hashCode()
                 +"Singleton_Student hashcode : " + student.hashCode());
     }

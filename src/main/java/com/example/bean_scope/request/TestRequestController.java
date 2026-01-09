@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/")
 @Scope(value="singleton")
-public class TestControllerRequest {
+public class TestRequestController {
 
     @Autowired
     User_Request user;
@@ -20,13 +20,13 @@ public class TestControllerRequest {
     @Autowired
     Student_Request student;
 
-    public TestControllerRequest(){
-        System.out.println("TestControllerRequest initialization");
+    public TestRequestController(){
+        System.out.println("TestRequestController initialization");
     }
 
     @PostConstruct
     public void init(){
-        System.out.println("TestControllerRequest hashcode : "+ this.hashCode()
+        System.out.println("TestRequestController hashcode : "+ this.hashCode()
                + "\tUser_Request hashcode : "+ user.hashCode()
                 + "\tStudentRequest hashcode : "+ student.hashCode());
     }
